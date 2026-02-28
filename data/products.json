@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Onyx Overcoat",
+    "category": "Outerwear",
+    "price": "1,290",
+    "tag": "New",
+    "image": "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?w=600",
+    "collection": "new-arrivals"
+  },
+  {
+    "id": 2,
+    "name": "Silk Noir Blouse",
+    "category": "Tops",
+    "price": "485",
+    "tag": "New",
+    "image": "https://images.pexels.com/photos/2220316/pexels-photo-2220316.jpeg?w=600",
+    "collection": "new-arrivals"
+  },
+  {
+    "id": 3,
+    "name": "Velvet Trousers",
+    "category": "Bottoms",
+    "price": "620",
+    "tag": "New",
+    "image": "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?w=600",
+    "collection": "new-arrivals"
+  },
+  {
+    "id": 4,
+    "name": "Shadow Blazer",
+    "category": "Jackets",
+    "price": "980",
+    "tag": "New",
+    "image": "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?w=600",
+    "collection": "new-arrivals"
+  },
+  {
+    "id": 5,
+    "name": "Midnight Cashmere",
+    "category": "Knitwear",
+    "price": "890",
+    "tag": "Bestseller",
+    "image": "https://images.pexels.com/photos/2220319/pexels-photo-2220319.jpeg?w=600",
+    "collection": "featured"
+  },
+  {
+    "id": 6,
+    "name": "Noir Leather Jacket",
+    "category": "Outerwear",
+    "price": "2,150",
+    "tag": "Limited",
+    "image": "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?w=600",
+    "collection": "featured"
+  },
+  {
+    "id": 7,
+    "name": "Obsidian Dress",
+    "category": "Dresses",
+    "price": "1,100",
+    "tag": null,
+    "image": "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?w=600",
+    "collection": "featured"
+  },
+  {
+    "id": 8,
+    "name": "Carbon Suit",
+    "category": "Tailoring",
+    "price": "3,200",
+    "tag": "Limited",
+    "image": "https://images.pexels.com/photos/1300550/pexels-photo-1300550.jpeg?w=600",
+    "collection": "featured"
+  },
+  {
+    "id": 9,
+    "name": "Dusk Silk Scarf",
+    "category": "Accessories",
+    "price": "320",
+    "tag": null,
+    "image": "https://images.pexels.com/photos/1030946/pexels-photo-1030946.jpeg?w=600",
+    "collection": "featured"
+  },
+  {
+    "id": 10,
+    "name": "Eclipse Turtleneck",
+    "category": "Tops",
+    "price": "540",
+    "tag": "Bestseller",
+    "image": "https://images.pexels.com/photos/2220316/pexels-photo-2220316.jpeg?w=600",
+    "collection": "featured"
+  }
+]

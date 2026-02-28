@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1772251308980",
+    "name": "VARADRAJ DIPAK KHORATE",
+    "email": "vijaykhorate5@gmail.com",
+    "password": "$2b$10$zrGvEnzXBu6bwDBVKB14PeTE2bS7R3.tHLirh.X4TDG2MpdNxflcC",
+    "isAdmin": false,
+    "orders": [],
+    "createdAt": "2026-02-28T04:01:48.980Z"
+  },
+  {
+    "id": "1772252169689",
+    "name": "VARADRAJ DIPAK KHORATE",
+    "email": "varadrajkhorate81@gmail.com",
+    "password": "$2b$10$oNlXisSzfLcQig2tI6aIUOF9JZEl9gI8JzNyrSX8ORMnhfk/BxW9W",
+    "isAdmin": true,
+    "orders": [],
+    "createdAt": "2026-02-28T04:16:09.689Z"
+  }
+]
