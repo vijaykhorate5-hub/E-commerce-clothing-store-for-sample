@@ -28,30 +28,41 @@ export default function AuthPage() {
     }
   }
 
-  const inputClass = "w-full bg-[#111] border border-white/8 text-white text-sm px-4 py-4 outline-none focus:border-yellow-700/60 placeholder-gray-700 transition-all duration-200"
-  const labelClass = "text-xs tracking-[0.2em] uppercase text-gray-500 mb-2 block"
+  const inputClass =
+    'w-full bg-[#111] border border-white/10 text-white text-sm px-4 py-3.5 rounded-xl outline-none focus:border-yellow-500/70 placeholder-gray-700 transition-all duration-200'
+  const labelClass =
+    'text-[11px] tracking-[0.22em] uppercase text-gray-500 mb-2 block'
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex">
-      {/* Left decorative panel — hidden on mobile */}
-      <div className="hidden lg:flex w-1/2 bg-[#0d0d0d] border-r border-white/5 flex-col items-center justify-center p-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/5 to-transparent pointer-events-none" />
+    <div className="min-h-screen bg-[#050505] flex flex-col lg:flex-row">
+      {/* Left panel (hidden on mobile) */}
+      <div className="hidden lg:flex w-1/2 bg-[#070707] border-r border-white/6 flex-col items-center justify-center p-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/8 via-transparent to-transparent pointer-events-none" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center z-10"
         >
-          <h1 className="font-serif text-5xl tracking-widest text-white mb-4">MAISON NOIR</h1>
-          <div className="w-16 h-px bg-yellow-700/50 mx-auto mb-6" />
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-            Luxury fashion for those who appreciate the finer things in life. Crafted with intention, worn with distinction.
+          <h1 className="font-serif text-4xl xl:text-5xl tracking-[0.4em] text-white mb-4">
+            MAISON NOIR
+          </h1>
+          <div className="w-16 h-px bg-yellow-500/60 mx-auto mb-6" />
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">
+            Luxury fashion for those who appreciate the finer things in life.
+            Crafted with intention, worn with distinction.
           </p>
-          <div className="mt-12 grid grid-cols-3 gap-6 text-center">
-            {[['10+', 'Years'], ['500+', 'Products'], ['50K+', 'Clients']].map(([num, label]) => (
+          <div className="mt-10 grid grid-cols-3 gap-6 text-center">
+            {[
+              ['10+', 'Years'],
+              ['500+', 'Pieces'],
+              ['50K+', 'Clients'],
+            ].map(([num, label]) => (
               <div key={label}>
-                <p className="font-serif text-2xl text-yellow-600">{num}</p>
-                <p className="text-gray-600 text-xs tracking-widest uppercase mt-1">{label}</p>
+                <p className="font-serif text-2xl text-yellow-400">{num}</p>
+                <p className="text-gray-600 text-[11px] tracking-[0.24em] uppercase mt-1">
+                  {label}
+                </p>
               </div>
             ))}
           </div>
@@ -59,32 +70,42 @@ export default function AuthPage() {
       </div>
 
       {/* Right form panel */}
-      <div className="flex-1 flex items-center justify-center px-6 py-16">
+      <div className="flex-1 flex items-center justify-center px-5 sm:px-6 py-16">
         <div className="w-full max-w-sm">
-
           {/* Mobile logo */}
           <div className="text-center mb-8 lg:hidden">
-            <h1 className="font-serif text-3xl tracking-widest text-white">MAISON NOIR</h1>
-            <div className="w-10 h-px bg-yellow-700/50 mx-auto mt-3" />
+            <h1 className="font-serif text-3xl tracking-[0.4em] text-white">
+              MAISON NOIR
+            </h1>
+            <div className="w-10 h-px bg-yellow-500/60 mx-auto mt-3" />
           </div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             {/* Tabs */}
-            <div className="flex mb-8 border-b border-white/5">
-              {['Sign In', 'Create Account'].map((tab, i) => (
-                <button
-                  key={tab}
-                  onClick={() => { setIsLogin(i === 0); setError('') }}
-                  className={`flex-1 pb-3 text-xs tracking-widest uppercase transition-all duration-200 ${
-                    (isLogin ? i === 0 : i === 1)
-                      ? 'text-yellow-600 border-b-2 border-yellow-600 -mb-px'
-                      : 'text-gray-500 hover:text-gray-300'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
+            <div className="flex mb-8 border-b border-white/8">
+              {['Sign In', 'Create Account'].map((tab, i) => {
+                const active = isLogin ? i === 0 : i === 1
+                return (
+                  <button
+                    key={tab}
+                    onClick={() => {
+                      setIsLogin(i === 0)
+                      setError('')
+                    }}
+                    className={`flex-1 pb-3 text-[11px] tracking-[0.28em] uppercase transition-all duration-200 ${
+                      active
+                        ? 'text-yellow-400 border-b-2 border-yellow-400 -mb-px'
+                        : 'text-gray-500 hover:text-gray-300'
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                )
+              })}
             </div>
 
             <AnimatePresence mode="wait">
@@ -99,23 +120,43 @@ export default function AuthPage() {
                   {!isLogin && (
                     <div>
                       <label className={labelClass}>Full Name</label>
-                      <input name="name" value={form.name} onChange={handleChange} placeholder="John Doe" className={inputClass} />
+                      <input
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        className={inputClass}
+                      />
                     </div>
                   )}
                   <div>
                     <label className={labelClass}>Email Address</label>
-                    <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="john@example.com" className={inputClass} />
+                    <input
+                      name="email"
+                      type="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="john@example.com"
+                      className={inputClass}
+                    />
                   </div>
                   <div>
                     <label className={labelClass}>Password</label>
                     <div className="relative">
                       <input
-                        name="password" type={showPass ? 'text' : 'password'}
-                        value={form.password} onChange={handleChange}
-                        placeholder="••••••••" className={inputClass + ' pr-12'}
+                        name="password"
+                        type={showPass ? 'text' : 'password'}
+                        value={form.password}
+                        onChange={handleChange}
+                        placeholder="••••••••"
+                        className={inputClass + ' pr-12'}
                         onKeyDown={e => e.key === 'Enter' && handleSubmit()}
                       />
-                      <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-400 text-xs transition-colors">
+                      <button
+                        type="button"
+                        onClick={() => setShowPass(!showPass)}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-400 text-[11px] transition-colors"
+                      >
                         {showPass ? 'Hide' : 'Show'}
                       </button>
                     </div>
@@ -125,12 +166,14 @@ export default function AuthPage() {
                 <AnimatePresence>
                   {error && (
                     <motion.div
-                      className="mt-4 bg-red-600/10 border border-red-600/20 px-4 py-3"
+                      className="mt-4 bg-red-500/10 border border-red-500/30 px-4 py-3 rounded-lg"
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
                     >
-                      <p className="text-red-400 text-xs tracking-wide">{error}</p>
+                      <p className="text-red-300 text-xs tracking-wide">
+                        {error}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -138,7 +181,7 @@ export default function AuthPage() {
                 <motion.button
                   onClick={handleSubmit}
                   disabled={loading}
-                  className="w-full mt-6 py-4 bg-yellow-600 text-black text-xs font-semibold tracking-[0.3em] uppercase hover:bg-yellow-500 transition-all duration-300 disabled:opacity-50"
+                  className="w-full mt-6 py-3.5 bg-yellow-400 text-black text-[11px] font-semibold tracking-[0.32em] uppercase rounded-full hover:bg-yellow-300 transition-all duration-300 disabled:opacity-50"
                   whileTap={{ scale: 0.98 }}
                 >
                   {loading ? (
@@ -146,12 +189,22 @@ export default function AuthPage() {
                       <span className="w-3 h-3 border border-black/30 border-t-black rounded-full animate-spin" />
                       Please wait...
                     </span>
-                  ) : (isLogin ? 'Sign In' : 'Create Account')}
+                  ) : isLogin ? (
+                    'Sign In'
+                  ) : (
+                    'Create Account'
+                  )}
                 </motion.button>
 
                 <p className="text-center text-gray-600 text-xs mt-5 tracking-wide">
                   {isLogin ? "Don't have an account? " : 'Already have an account? '}
-                  <button onClick={() => { setIsLogin(!isLogin); setError('') }} className="text-yellow-600 hover:text-yellow-500 transition-colors">
+                  <button
+                    onClick={() => {
+                      setIsLogin(!isLogin)
+                      setError('')
+                    }}
+                    className="text-yellow-400 hover:text-yellow-300 transition-colors"
+                  >
                     {isLogin ? 'Create one' : 'Sign in'}
                   </button>
                 </p>
